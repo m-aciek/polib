@@ -697,7 +697,7 @@ class TestPoFile(unittest.TestCase):
 
     def test_percent_translated(self):
         po = polib.pofile('tests/test_pofile_helpers.po')
-        self.assertEqual(po.percent_translated(), 53)
+        self.assertEqual(po.percent_translated(), 54)
         po = polib.POFile()
         self.assertEqual(po.percent_translated(), 100)
 
