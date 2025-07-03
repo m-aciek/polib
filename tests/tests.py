@@ -705,6 +705,10 @@ class TestPoFile(unittest.TestCase):
         po = polib.pofile('tests/test_pofile_helpers.po')
         self.assertEqual(len(po.translated_entries()), 7)
 
+    def test_translated_words(self):
+        po = polib.pofile('tests/test_pofile_helpers.po')
+        self.assertEqual(po.translated_words(), 40)
+
     def test_untranslated_entries(self):
         po = polib.pofile('tests/test_pofile_helpers.po')
         self.assertEqual(len(po.untranslated_entries()), 4)
