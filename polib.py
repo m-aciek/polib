@@ -750,10 +750,10 @@ class POFile(_BaseFile):
                 entry.obsolete = True
 
     def total_words(self) -> int:
-        return sum(e.words() for e in self if not e.obsolete)
+        return sum(e.msgid_words() for e in self if not e.obsolete)
 
     def translated_words(self) -> int:
-        return sum(e.words() for e in self if e.translated())
+        return sum(e.msgid_words() for e in self if e.translated())
 # }}}
 # class MOFile {{{
 
@@ -963,7 +963,7 @@ class _BaseEntry(object):
             return '%s%s%s' % (self.msgctxt, "\x04", self.msgid)
         return self.msgid
 
-    def words(self) -> int:
+    def msgid_words(self) -> int:
         if self.msgid_plural:
             return len(self.msgid_plural.split())
         return len(self.msgid.split())
