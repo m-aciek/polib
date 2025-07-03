@@ -415,6 +415,10 @@ msgstr ""
         self.assertFalse(polib._is_file('This is not a file !!!!'))
         self.assertFalse(polib._is_file(True))
 
+    def test_entry_words(self):
+        po = polib.pofile('tests/test_utf8.po')
+        self.assertEqual(po[0].words(), 2)
+
 
 class TestBaseFile(unittest.TestCase):
     """
