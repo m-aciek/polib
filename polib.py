@@ -964,8 +964,6 @@ class _BaseEntry(object):
         return self.msgid
 
     def msgid_words(self) -> int:
-        if self.msgid_plural:
-            return len(self.msgid_plural.split())
         return len(self.msgid.split())
 # }}}
 # class POEntry {{{
